@@ -5,23 +5,22 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollService {
-    public static class EmployeePayrollServices
-    {
+    public static class EmployeePayrollServices {
 
-        public enum IOServices
-        {
+        public enum IOServices {
             CONSOLE_ID, FILE_IO, DB_IO, REST_IO
         }
-        private List<EmployeePayrollData> employeePayrollList;
-        public EmployeePayrollServices() {}
 
-        public EmployeePayrollServices(List<EmployeePayrollData> employeePayrollDataList)
-        {
+        private List<EmployeePayrollData> employeePayrollList;
+
+        public EmployeePayrollServices() {
+        }
+
+        public EmployeePayrollServices(List<EmployeePayrollData> employeePayrollList) {
             this.employeePayrollList = employeePayrollList;
         }
 
-        public static void main(String[] args)
-        {
+        public static void main(String[] args) {
             ArrayList<EmployeePayrollData> employeePayrollList = new ArrayList<>();
             EmployeePayrollServices employeePayrollServices = new EmployeePayrollServices(employeePayrollList);
             Scanner consoleInputReader = new Scanner(System.in);
@@ -30,8 +29,7 @@ public class EmployeePayrollService {
         }
 
 
-        private void readEmployeePayrollData(Scanner consoleInputReader)
-        {
+        private void readEmployeePayrollData(Scanner consoleInputReader) {
             System.out.println("Enter Employee ID:");
             int id = consoleInputReader.nextInt();
 
@@ -43,9 +41,8 @@ public class EmployeePayrollService {
             employeePayrollList.add(new EmployeePayrollData(id, name, salary));
         }
 
-        private void writeEmployeePayrollData()
-        {
-            System.out.println("\n Writing Employee Payroll Roaster to Console \n" + employeePayrollList);
+        private void writeEmployeePayrollData() {
+            System.out.println("\n Employee Payroll Roaster on Console \n" + employeePayrollList);
         }
     }
 }
